@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WBTSdata API &mdash; WBTSdata v0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2fea6348"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to WBTSdata’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WBTSdata
+              <img src="_static/dwbc-hydrography.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">WBTSdata</span> <span class="pre">API</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.load_vel_files.create_Dataset"><code class="docutils literal notranslate"><span class="pre">create_Dataset()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.load_vel_files.create_complete_Dataset"><code class="docutils literal notranslate"><span class="pre">create_complete_Dataset()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.load_vel_files.create_coordinates"><code class="docutils literal notranslate"><span class="pre">create_coordinates()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.load_vel_files.load_vel_from_file"><code class="docutils literal notranslate"><span class="pre">load_vel_from_file()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.merge_datasets.create_CTD_Dataset_with_ADCPtimes"><code class="docutils literal notranslate"><span class="pre">create_CTD_Dataset_with_ADCPtimes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.merge_datasets.create_coordinates_with_ADCPtimes"><code class="docutils literal notranslate"><span class="pre">create_coordinates_with_ADCPtimes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.merge_datasets.dir_list_ADCP"><code class="docutils literal notranslate"><span class="pre">dir_list_ADCP()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.merge_datasets.dir_list_CTD"><code class="docutils literal notranslate"><span class="pre">dir_list_CTD()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.merge_datasets.merge_datasets"><code class="docutils literal notranslate"><span class="pre">merge_datasets()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.merge_datasets.merge_years"><code class="docutils literal notranslate"><span class="pre">merge_years()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.convert.add_attributes"><code class="docutils literal notranslate"><span class="pre">add_attributes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.convert.assign_variable_attributes"><code class="docutils literal notranslate"><span class="pre">assign_variable_attributes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.convert.attr_cruise"><code class="docutils literal notranslate"><span class="pre">attr_cruise()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.convert.process_dataset"><code class="docutils literal notranslate"><span class="pre">process_dataset()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.convert.rename_dimensions"><code class="docutils literal notranslate"><span class="pre">rename_dimensions()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.convert.rename_variables"><code class="docutils literal notranslate"><span class="pre">rename_variables()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.tools.convert_units"><code class="docutils literal notranslate"><span class="pre">convert_units()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.tools.get_config"><code class="docutils literal notranslate"><span class="pre">get_config()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#WBTSdata.plotters.plot_cast_over_time"><code class="docutils literal notranslate"><span class="pre">plot_cast_over_time()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WBTSdata</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">WBTSdata</span> <span class="pre">API</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/WBTSdata.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-WBTSdata.load_vel_files">
+<span id="wbtsdata-api"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">WBTSdata</span> <span class="pre">API</span></code><a class="headerlink" href="#module-WBTSdata.load_vel_files" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.load_vel_files.create_Dataset">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.load_vel_files.</span></span><span class="sig-name descname"><span class="pre">create_Dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vel_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/load_vel_files.html#create_Dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.load_vel_files.create_Dataset" title="Link to this definition"></a></dt>
+<dd><p>Create a xr.Dataset from the velocity data files in the directory vel_dir.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vel_dir</strong> (<em>str</em>) – The directory containing the velocity data files.</p></li>
+<li><p><strong>config</strong> (<em>dict</em><em>(</em><em>optional</em><em>)</em>) – The configuration dictionary.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A xr.Dataset containing the velocity data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xr.Dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.load_vel_files.create_complete_Dataset">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.load_vel_files.</span></span><span class="sig-name descname"><span class="pre">create_complete_Dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/load_vel_files.html#create_complete_Dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.load_vel_files.create_complete_Dataset" title="Link to this definition"></a></dt>
+<dd><p>Create a xr.Dataset from the velocity data files in the list of directories directory_list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>directory_list</strong> (<em>list</em>) – A list of directories containing the velocity data files.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A xr.Dataset containing the velocity data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xr.Dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.load_vel_files.create_coordinates">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.load_vel_files.</span></span><span class="sig-name descname"><span class="pre">create_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vel_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/load_vel_files.html#create_coordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.load_vel_files.create_coordinates" title="Link to this definition"></a></dt>
+<dd><p>Create a list of coordinates from the velocity data files in the directory vel_dir.
+Returns three lists of coordinates: avg_coordinates, start_coordinates, end_coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vel_dir</strong> (<em>str</em>) – The directory containing the velocity data files.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of coordinates for the average, start, and end of the cast.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.load_vel_files.load_vel_from_file">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.load_vel_files.</span></span><span class="sig-name descname"><span class="pre">load_vel_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vel_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/load_vel_files.html#load_vel_from_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.load_vel_files.load_vel_from_file" title="Link to this definition"></a></dt>
+<dd><p>Load the velocity data from the files in the directory vel_dir.
+Returns a list of pandas DataFrames.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vel_dir</strong> (<em>str</em>) – The directory containing the velocity data files.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of pandas DataFrames containing the velocity data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function" id="module-WBTSdata.merge_datasets">
+<dt class="sig sig-object py" id="WBTSdata.merge_datasets.create_CTD_Dataset_with_ADCPtimes">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.merge_datasets.</span></span><span class="sig-name descname"><span class="pre">create_CTD_Dataset_with_ADCPtimes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cal_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/merge_datasets.html#create_CTD_Dataset_with_ADCPtimes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.merge_datasets.create_CTD_Dataset_with_ADCPtimes" title="Link to this definition"></a></dt>
+<dd><p>Create a CTD dataset with the corresponding ADCP times.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cal_dir</strong> (<em>str</em>) – The path to the directory containing the CTD calibration data</p></li>
+<li><p><strong>config</strong> (<em>dict</em><em>(</em><em>optional</em><em>)</em>) – The configuration dictionary</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ds</strong> – The dataset containing the CTD data with the corresponding ADCP times</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xarray.Dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.merge_datasets.create_coordinates_with_ADCPtimes">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.merge_datasets.</span></span><span class="sig-name descname"><span class="pre">create_coordinates_with_ADCPtimes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cal_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/merge_datasets.html#create_coordinates_with_ADCPtimes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.merge_datasets.create_coordinates_with_ADCPtimes" title="Link to this definition"></a></dt>
+<dd><p>Create a list of coordinates for the CTD data with the corresponding ADCP times</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cal_dir</strong> (<em>str</em>) – The path to the directory containing the CTD calibration data</p></li>
+<li><p><strong>input_dir</strong> (<em>str</em>) – The path to the directory containing the CTD data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><strong>coordinates</strong> –</p>
+<dl class="simple">
+<dt>A list of lists, each list contains the following elements:</dt><dd><ul class="simple">
+<li><p>Cast number</p></li>
+<li><p>Latitude</p></li>
+<li><p>Longitude</p></li>
+<li><p>Date and time of the ADCP data</p></li>
+<li><p>Time flag</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.merge_datasets.dir_list_ADCP">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.merge_datasets.</span></span><span class="sig-name descname"><span class="pre">dir_list_ADCP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/merge_datasets.html#dir_list_ADCP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.merge_datasets.dir_list_ADCP" title="Link to this definition"></a></dt>
+<dd><p>create a list with all the directories that contain the ADCP data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input_dir</strong> (<em>str</em>) – The path to the directory containing the ADCP data</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>dir_list_ADCP</strong> – A list of strings, each string is a path to a directory containing ADCP data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.merge_datasets.dir_list_CTD">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.merge_datasets.</span></span><span class="sig-name descname"><span class="pre">dir_list_CTD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/merge_datasets.html#dir_list_CTD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.merge_datasets.dir_list_CTD" title="Link to this definition"></a></dt>
+<dd><p>create a list with all the directories that contain the CTD data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input_dir</strong> (<em>str</em>) – The path to the directory containing the CTD data</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>dir_list_CTD</strong> – A list of strings, each string is a path to a directory containing CTD data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.merge_datasets.merge_datasets">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.merge_datasets.</span></span><span class="sig-name descname"><span class="pre">merge_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cal_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vel_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/merge_datasets.html#merge_datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.merge_datasets.merge_datasets" title="Link to this definition"></a></dt>
+<dd><p>Merge the CTD and ADCP datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cal_dir</strong> (<em>str</em>) – The path to the directory containing the CTD calibration data</p></li>
+<li><p><strong>vel_dir</strong> (<em>str</em>) – The path to the directory containing the ADCP data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ds_merge</strong> – The dataset containing the merged CTD and ADCP data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xarray.Dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.merge_datasets.merge_years">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.merge_datasets.</span></span><span class="sig-name descname"><span class="pre">merge_years</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">merge_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/merge_datasets.html#merge_years"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.merge_datasets.merge_years" title="Link to this definition"></a></dt>
+<dd><p>Merge the datasets of different years into one dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>merge_dir</strong> (<em>str</em>) – The path to the directory containing the merged datasets of different years</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ds_all</strong> – The dataset containing the merged data of all years</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>xarray.Dataset</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function" id="module-WBTSdata.convert">
+<dt class="sig sig-object py" id="WBTSdata.convert.add_attributes">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.convert.</span></span><span class="sig-name descname"><span class="pre">add_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/convert.html#add_attributes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.convert.add_attributes" title="Link to this definition"></a></dt>
+<dd><p>Add attributes to the variables in a dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>xarray.Dataset</strong><strong>)</strong> (<em>ds</em>)</p></li>
+<li><p><strong>(</strong><strong>dict</strong><strong>)</strong> (<em>attr_dict</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>xarray.Dataset</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dataset with added attributes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.convert.assign_variable_attributes">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.convert.</span></span><span class="sig-name descname"><span class="pre">assign_variable_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vocab_attrs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'CAST_NUMBER':</span> <span class="pre">{'long_name':</span> <span class="pre">'Cast</span> <span class="pre">index',</span> <span class="pre">'units':</span> <span class="pre">'1'},</span> <span class="pre">'DATETIME':</span> <span class="pre">{'URI':</span> <span class="pre">'https://vocab.nerc.ac.uk/collection/P02/current/AYMD/',</span> <span class="pre">'long_name':</span> <span class="pre">'time</span> <span class="pre">of</span> <span class="pre">measurement',</span> <span class="pre">'observation_type':</span> <span class="pre">'measured',</span> <span class="pre">'standard_name':</span> <span class="pre">'time'},</span> <span class="pre">'DEPTH':</span> <span class="pre">{'accuracy':</span> <span class="pre">1,</span> <span class="pre">'comment':</span> <span class="pre">'from</span> <span class="pre">science</span> <span class="pre">pressure</span> <span class="pre">and</span> <span class="pre">interpolated',</span> <span class="pre">'long_name':</span> <span class="pre">'glider</span> <span class="pre">depth',</span> <span class="pre">'observation_type':</span> <span class="pre">'calculated',</span> <span class="pre">'platform':</span> <span class="pre">'platform',</span> <span class="pre">'positive':</span> <span class="pre">'down',</span> <span class="pre">'precision':</span> <span class="pre">2,</span> <span class="pre">'reference_datum':</span> <span class="pre">'surface',</span> <span class="pre">'resolution':</span> <span class="pre">0.02,</span> <span class="pre">'sensor':</span> <span class="pre">'sensor_ctd',</span> <span class="pre">'source':</span> <span class="pre">'pressure',</span> <span class="pre">'standard_name':</span> <span class="pre">'depth',</span> <span class="pre">'units':</span> <span class="pre">'m',</span> <span class="pre">'valid_max':</span> <span class="pre">2000,</span> <span class="pre">'valid_min':</span> <span class="pre">0},</span> <span class="pre">'DOXY':</span> <span class="pre">{'URI':</span> <span class="pre">'https://vocab.nerc.ac.uk/collection/P02/current/DOXY/',</span> <span class="pre">'long_name':</span> <span class="pre">'oxygen</span> <span class="pre">concentration',</span> <span class="pre">'observation_type':</span> <span class="pre">'calculated',</span> <span class="pre">'standard_name':</span> <span class="pre">'mole_concentration_of_dissolved_molecular_oxygen_in_sea_water',</span> <span class="pre">'units':</span> <span class="pre">'umol</span> <span class="pre">kg-1',</span> <span class="pre">'valid_max':</span> <span class="pre">425,</span> <span class="pre">'valid_min':</span> <span class="pre">0},</span> <span class="pre">'DYN_HEIGHT':</span> <span class="pre">{'URI':</span> <span class="pre">'',</span> <span class="pre">'long_name':</span> <span class="pre">'Dynamic</span> <span class="pre">height',</span> <span class="pre">'observation_type':</span> <span class="pre">'calculated',</span> <span class="pre">'standard_name':</span> <span class="pre">'sea_surface_height_above_geoid',</span> <span class="pre">'units':</span> <span class="pre">'cm',</span> <span class="pre">'valid_max':</span> <span class="pre">2,</span> <span class="pre">'valid_min':</span> <span class="pre">-2},</span> <span class="pre">'ERROR_VELOCITY':</span> <span class="pre">{'URI':</span> <span class="pre">'',</span> <span class="pre">'long_name':</span> <span class="pre">'Error</span> <span class="pre">in</span> <span class="pre">water</span> <span class="pre">velocity',</span> <span class="pre">'observation_type':</span> <span class="pre">'measured',</span> <span class="pre">'standard_name':</span> <span class="pre">'error_sea_water_velocity',</span> <span class="pre">'units':</span> <span class="pre">'m</span> <span class="pre">s-1',</span> <span class="pre">'valid_max':</span> <span class="pre">2,</span> <span class="pre">'valid_min':</span> <span class="pre">0},</span> <span class="pre">'GA':</span> <span class="pre">{'long_name':</span> <span class="pre">'',</span> <span class="pre">'observation_type':</span> <span class="pre">'',</span> <span class="pre">'standard_name':</span> <span class="pre">'',</span> <span class="pre">'units':</span> <span class="pre">'gamma'},</span> <span class="pre">'GC_STRING':</span> <span class="pre">{'long_name':</span> <span class="pre">'GC</span> <span class="pre">string',</span> <span class="pre">'units':</span> <span class="pre">'1'},</span> <span class="pre">'LATITUDE':</span> <span class="pre">{'URI':</span> <span class="pre">'https://vocab.nerc.ac.uk/collection/OG1/current/LAT/',</span> <span class="pre">'axis':</span> <span class="pre">'Y',</span> <span class="pre">'coordinate_reference_frame':</span> <span class="pre">'urn:ogc:crs:EPSG::4326',</span> <span class="pre">'long_name':</span> <span class="pre">'Latitude</span> <span class="pre">north',</span> <span class="pre">'observation_type':</span> <span class="pre">'measured',</span> <span class="pre">'platform':</span> <span class="pre">'platform',</span> <span class="pre">'reference':</span> <span class="pre">'WGS84',</span> <span class="pre">'standard_name':</span> <span class="pre">'latitude',</span> <span class="pre">'units':</span> <span class="pre">'degrees_north',</span> <span class="pre">'valid_max':</span> <span class="pre">90,</span> <span class="pre">'valid_min':</span> <span class="pre">-90},</span> <span class="pre">'LONGITUDE':</span> <span class="pre">{'URI':</span> <span class="pre">'https://vocab.nerc.ac.uk/collection/OG1/current/LON/',</span> <span class="pre">'axis':</span> <span class="pre">'X',</span> <span class="pre">'coordinate_reference_frame':</span> <span class="pre">'urn:ogc:crs:EPSG::4326',</span> <span class="pre">'long_name':</span> <span class="pre">'Longitude</span> <span class="pre">east',</span> <span class="pre">'observation_type':</span> <span class="pre">'measured',</span> <span class="pre">'platform':</span> <span class="pre">'platform',</span> <span class="pre">'reference':</span> <span class="pre">'WGS84',</span> <span class="pre">'standard_name':</span> <span class="pre">'longitude',</span> <span class="pre">'units':</span> <span class="pre">'degrees_east',</span> <span class="pre">'valid_max':</span> <span class="pre">180,</span> <span class="pre">'valid_min':</span> <span class="pre">-180},</span> <span class="pre">'PRES':</span> <span class="pre">{'URI':</span> <span class="pre">'https://vocab.nerc.ac.uk/collection/OG1/current/PRES',</span> <span class="pre">'comment':</span> <span class="pre">'ctd</span> <span class="pre">pressure</span> <span class="pre">sensor',</span> <span class="pre">'long_name':</span> <span class="pre">'Pressure</span> <span class="pre">(spatial</span> <span class="pre">coordinate)</span> <span class="pre">exerted</span> <span class="pre">by</span> <span class="pre">the</span> <span class="pre">water</span> <span class="pre">body</span> <span class="pre">by</span> <span class="pre">profiling</span> <span class="pre">pressure</span> <span class="pre">sensor</span> <span class="pre">and</span> <span class="pre">correction</span> <span class="pre">to</span> <span class="pre">read</span> <span class="pre">zero</span> <span class="pre">at</span> <span class="pre">sea</span> <span class="pre">level',</span> <span class="pre">'observation_type':</span> <span class="pre">'measured',</span> <span class="pre">'positive':</span> <span class="pre">'down',</span> <span class="pre">'reference_datum':</span> <span class="pre">'sea-surface',</span> <span class="pre">'sensor':</span> <span class="pre">'sensor_ctd',</span> <span class="pre">'standard_name':</span> <span class="pre">'sea_water_pressure',</span> <span class="pre">'units':</span> <span class="pre">'dbar',</span> <span class="pre">'valid_max':</span> <span class="pre">2000,</span> <span class="pre">'valid_min':</span> <span class="pre">0},</span> <span class="pre">'PSAL':</span> <span class="pre">{'URI':</span> <span class="pre">'https://vocab.nerc.ac.uk/collection/OG1/current/PSAL/',</span> <span class="pre">'comment':</span> <span class="pre">'Practical</span> <span class="pre">salinity</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">water</span> <span class="pre">body</span> <span class="pre">by</span> <span class="pre">CTD</span> <span class="pre">and</span> <span class="pre">computation</span> <span class="pre">using</span> <span class="pre">UNESCO</span> <span class="pre">1983</span> <span class="pre">algorithm',</span> <span class="pre">'long_name':</span> <span class="pre">'water</span> <span class="pre">salinity',</span> <span class="pre">'observation_type':</span> <span class="pre">'calculated',</span> <span class="pre">'sensor':</span> <span class="pre">'sensor_ctd',</span> <span class="pre">'sources':</span> <span class="pre">'CNDC,</span> <span class="pre">TEMP,</span> <span class="pre">PRES',</span> <span class="pre">'standard_name':</span> <span class="pre">'sea_water_practical_salinity',</span> <span class="pre">'units':</span> <span class="pre">'1e-3',</span> <span class="pre">'valid_max':</span> <span class="pre">40,</span> <span class="pre">'valid_min':</span> <span class="pre">0},</span> <span class="pre">'TEMP':</span> <span class="pre">{'URI':</span> <span class="pre">'https://vocab.nerc.ac.uk/collection/OG1/current/TEMP/',</span> <span class="pre">'long_name':</span> <span class="pre">'Temperature</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">water</span> <span class="pre">body</span> <span class="pre">by</span> <span class="pre">CTD</span> <span class="pre">',</span> <span class="pre">'observation_type':</span> <span class="pre">'measured',</span> <span class="pre">'standard_name':</span> <span class="pre">'sea_water_temperature',</span> <span class="pre">'units':</span> <span class="pre">'Celsius',</span> <span class="pre">'valid_max':</span> <span class="pre">42,</span> <span class="pre">'valid_min':</span> <span class="pre">-5},</span> <span class="pre">'THETA':</span> <span class="pre">{'URI':</span> <span class="pre">'https://vocab.nerc.ac.uk/collection/OG1/current/THETA/',</span> <span class="pre">'long_name':</span> <span class="pre">'Potential</span> <span class="pre">temperature</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">water</span> <span class="pre">body</span> <span class="pre">by</span> <span class="pre">computation</span> <span class="pre">using</span> <span class="pre">UNESCO</span> <span class="pre">1983</span> <span class="pre">algorithm.',</span> <span class="pre">'observation_type':</span> <span class="pre">'calculated',</span> <span class="pre">'sources':</span> <span class="pre">'salinity</span> <span class="pre">temperature</span> <span class="pre">pressure',</span> <span class="pre">'standard_name':</span> <span class="pre">'sea_water_potential_temperature',</span> <span class="pre">'units':</span> <span class="pre">'Celsius',</span> <span class="pre">'valid_max':</span> <span class="pre">42,</span> <span class="pre">'valid_min':</span> <span class="pre">-5},</span> <span class="pre">'TIME_FLAG':</span> <span class="pre">{'Value</span> <span class="pre">0':</span> <span class="pre">'Start</span> <span class="pre">time</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">cast',</span> <span class="pre">'Value</span> <span class="pre">1':</span> <span class="pre">'Start</span> <span class="pre">time</span> <span class="pre">of</span> <span class="pre">cast</span> <span class="pre">needs</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">checked</span> <span class="pre">in</span> <span class="pre">Cruise</span> <span class="pre">report',</span> <span class="pre">'Value</span> <span class="pre">2':</span> <span class="pre">'End</span> <span class="pre">time</span> <span class="pre">of</span> <span class="pre">cast',</span> <span class="pre">'long_name':</span> <span class="pre">'Time</span> <span class="pre">flag',</span> <span class="pre">'units':</span> <span class="pre">'1'},</span> <span class="pre">'U_WATER_VELOCITY':</span> <span class="pre">{'URI':</span> <span class="pre">'',</span> <span class="pre">'long_name':</span> <span class="pre">'Eastward</span> <span class="pre">water</span> <span class="pre">velocity',</span> <span class="pre">'observation_type':</span> <span class="pre">'measured',</span> <span class="pre">'standard_name':</span> <span class="pre">'eastward_sea_water_velocity',</span> <span class="pre">'units':</span> <span class="pre">'m</span> <span class="pre">s-1',</span> <span class="pre">'valid_max':</span> <span class="pre">3,</span> <span class="pre">'valid_min':</span> <span class="pre">-3},</span> <span class="pre">'V_WATER_VELOCITY':</span> <span class="pre">{'URI':</span> <span class="pre">'',</span> <span class="pre">'long_name':</span> <span class="pre">'Northward</span> <span class="pre">water</span> <span class="pre">velocity',</span> <span class="pre">'observation_type':</span> <span class="pre">'measured',</span> <span class="pre">'standard_name':</span> <span class="pre">'northward_sea_water_velocity',</span> <span class="pre">'units':</span> <span class="pre">'m</span> <span class="pre">s-1',</span> <span class="pre">'valid_max':</span> <span class="pre">3,</span> <span class="pre">'valid_min':</span> <span class="pre">-3}}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'cm_per_s':</span> <span class="pre">'cm</span> <span class="pre">s-1',</span> <span class="pre">'dbars':</span> <span class="pre">'dbar',</span> <span class="pre">'deg</span> <span class="pre">c':</span> <span class="pre">'Celcius',</span> <span class="pre">'dyn.</span> <span class="pre">cm':</span> <span class="pre">'cm',</span> <span class="pre">'gamma':</span> <span class="pre">'gamma',</span> <span class="pre">'meters':</span> <span class="pre">'m',</span> <span class="pre">'psu':</span> <span class="pre">'psu',</span> <span class="pre">'umol/kg':</span> <span class="pre">'umol</span> <span class="pre">kg-1'}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/convert.html#assign_variable_attributes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.convert.assign_variable_attributes" title="Link to this definition"></a></dt>
+<dd><p>Assigns variable attributes to a dataset where they are missing and reformats units according to the provided unit_format.
+Attributes that already exist in the dataset are not changed, except for unit reformatting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>xarray.Dataset</strong><strong>)</strong> (<em>ds</em>)</p></li>
+<li><p><strong>(</strong><strong>dict</strong><strong>)</strong> (<em>unit_str_format</em>)</p></li>
+<li><p><strong>(</strong><strong>dict</strong><strong>)</strong></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>xarray.Dataset</strong> (<em>The dataset with updated attributes.</em>)</p></li>
+<li><p><strong>attr_warnings (set)</strong> (<em>A set containing warning messages for attribute mismatches.</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.convert.attr_cruise">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.convert.</span></span><span class="sig-name descname"><span class="pre">attr_cruise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/convert.html#attr_cruise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.convert.attr_cruise" title="Link to this definition"></a></dt>
+<dd><p>Generate a dictionary of attributes for a cruise based on the given dataset and configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ds</strong> (<em>xarray.Dataset</em>) – The dataset containing the cruise data.</p></li>
+<li><p><strong>config</strong> (<em>dict</em>) – The configuration dictionary.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the cruise attributes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.convert.process_dataset">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.convert.</span></span><span class="sig-name descname"><span class="pre">process_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/convert.html#process_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.convert.process_dataset" title="Link to this definition"></a></dt>
+<dd><p>Process a dataset by renaming dimensions and variables, assigning attributes, and adding attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>xarray.Dataset</strong><strong>)</strong> (<em>ds</em>)</p></li>
+<li><p><strong>(</strong><strong>dict</strong><strong>)</strong> (<em>config</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>xarray.Dataset</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The processed dataset.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.convert.rename_dimensions">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.convert.</span></span><span class="sig-name descname"><span class="pre">rename_dimensions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rename_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/convert.html#rename_dimensions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.convert.rename_dimensions" title="Link to this definition"></a></dt>
+<dd><p>Renames dimensions in the dataset based on the provided dictionary for OG1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>xarray.Dataset</strong><strong>)</strong> (<em>ds</em>)</p></li>
+<li><p><strong>(</strong><strong>dict</strong><strong>)</strong> (<em>rename_dict</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>xarray.Dataset</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dataset with renamed dimensions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.convert.rename_variables">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.convert.</span></span><span class="sig-name descname"><span class="pre">rename_variables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rename_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'CAST':</span> <span class="pre">'CAST_NUMBER',</span> <span class="pre">'error_velocity':</span> <span class="pre">'ERROR_VELOCITY',</span> <span class="pre">'ga':</span> <span class="pre">'GA',</span> <span class="pre">'gc_string':</span> <span class="pre">'GC_STRING',</span> <span class="pre">'ht':</span> <span class="pre">'DYN_HEIGHT',</span> <span class="pre">'latitude':</span> <span class="pre">'LATITUDE',</span> <span class="pre">'longitude':</span> <span class="pre">'LONGITUDE',</span> <span class="pre">'ox':</span> <span class="pre">'DOXY',</span> <span class="pre">'pr':</span> <span class="pre">'PRES',</span> <span class="pre">'sa':</span> <span class="pre">'PSAL',</span> <span class="pre">'te':</span> <span class="pre">'TEMP',</span> <span class="pre">'th':</span> <span class="pre">'THETA',</span> <span class="pre">'u_water_velocity_component':</span> <span class="pre">'U_WATER_VELOCITY',</span> <span class="pre">'v_water_velocity_component':</span> <span class="pre">'V_WATER_VELOCITY',</span> <span class="pre">'z_depth':</span> <span class="pre">'DEPTH'}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/convert.html#rename_variables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.convert.rename_variables" title="Link to this definition"></a></dt>
+<dd><p>Renames variables in the dataset based on the provided dictionary for OG1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>xarray.Dataset</strong><strong>)</strong> (<em>ds</em>)</p></li>
+<li><p><strong>(</strong><strong>dict</strong><strong>)</strong> (<em>rename_dict</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>xarray.Dataset</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dataset with renamed variables.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function" id="module-WBTSdata.tools">
+<dt class="sig sig-object py" id="WBTSdata.tools.convert_units">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.tools.</span></span><span class="sig-name descname"><span class="pre">convert_units</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preferred_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['m</span> <span class="pre">s-1',</span> <span class="pre">'dbar',</span> <span class="pre">'Celsius',</span> <span class="pre">'psu',</span> <span class="pre">'umol</span> <span class="pre">kg-1',</span> <span class="pre">'gamma',</span> <span class="pre">'m']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit_conversion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'cm':</span> <span class="pre">{'factor':</span> <span class="pre">0.01,</span> <span class="pre">'units_name':</span> <span class="pre">'m'},</span> <span class="pre">'cm</span> <span class="pre">s-1':</span> <span class="pre">{'factor':</span> <span class="pre">0.01,</span> <span class="pre">'units_name':</span> <span class="pre">'m</span> <span class="pre">s-1'},</span> <span class="pre">'cm/s':</span> <span class="pre">{'factor':</span> <span class="pre">0.01,</span> <span class="pre">'units_name':</span> <span class="pre">'m/s'},</span> <span class="pre">'cm_per_s':</span> <span class="pre">{'factor':</span> <span class="pre">0.01,</span> <span class="pre">'units_name':</span> <span class="pre">'m</span> <span class="pre">s-1'},</span> <span class="pre">'dyn.</span> <span class="pre">cm':</span> <span class="pre">{'factor':</span> <span class="pre">1,</span> <span class="pre">'units_name':</span> <span class="pre">'cm'},</span> <span class="pre">'meters':</span> <span class="pre">{'factor':</span> <span class="pre">1,</span> <span class="pre">'units_name':</span> <span class="pre">'m'}}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/tools.html#convert_units"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.tools.convert_units" title="Link to this definition"></a></dt>
+<dd><p>Convert the units of variables in an xarray Dataset to preferred units.  This is useful, for instance, to convert cm/s to m/s.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>xarray.Dataset</strong><strong>)</strong> (<em>ds</em>)</p></li>
+<li><p><strong>(</strong><strong>list</strong><strong>)</strong> (<em>preferred_units</em>)</p></li>
+<li><p><strong>(</strong><strong>dict</strong><strong>)</strong> (<em>unit_conversion</em>)</p></li>
+<li><p><strong>string</strong> (<em>Each key is a unit</em>) – <ul>
+<li><p>‘factor’: The factor to multiply the variable by to convert it.</p></li>
+<li><p>’units_name’: The new unit name after conversion.</p></li>
+</ul>
+</p></li>
+<li><p><strong>with</strong> (<em>and each value is a dictionary</em>) – <ul>
+<li><p>‘factor’: The factor to multiply the variable by to convert it.</p></li>
+<li><p>’units_name’: The new unit name after conversion.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>xarray.Dataset</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The dataset with converted units.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WBTSdata.tools.get_config">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.tools.</span></span><span class="sig-name descname"><span class="pre">get_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/tools.html#get_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.tools.get_config" title="Link to this definition"></a></dt>
+<dd><p>Get the configuration settings from a YAML file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dict</strong></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>The configuration settings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function" id="module-WBTSdata.plotters">
+<dt class="sig sig-object py" id="WBTSdata.plotters.plot_cast_over_time">
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.plotters.</span></span><span class="sig-name descname"><span class="pre">plot_cast_over_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds_all</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/plotters.html#plot_cast_over_time"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.plotters.plot_cast_over_time" title="Link to this definition"></a></dt>
+<dd><p>Plot the cast over time for the given dataset. The dataset should contain the following variables:
+- DATETIME: The datetime of the cast
+- LONGITUDE: The longitude of the cast
+- GC_STRING: The gc_string of the cast</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ds_all</strong> (<em>xarray.Dataset</em>) – The dataset containing the data to plot.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>fig, ax</strong> – The figure and axes of the plot.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>matplotlib.figure.Figure, matplotlib.axes.Axes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to WBTSdata’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Eleanor Frajka-Williams, Till Moritz.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
