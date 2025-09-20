@@ -36,6 +36,7 @@ def plot_cast_over_time(ds_all):
     # Append °W to all the longitudes in the ytick label
     yticks = ax.get_yticks()
     ytick_labels = [f'{ytick}°W' for ytick in yticks]
+    ax.set_yticks(yticks)  # Set the tick positions first
     ax.set_yticklabels(ytick_labels)
 
     ax.tick_params(axis='x', labelsize=15)

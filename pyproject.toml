@@ -43,3 +43,24 @@ dependencies = { file = [
   "requirements.txt",
 ] }
 readme = { file = "README.md", content-type = "text/markdown" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]  
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--tb=short",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests", 
+    "visual: marks tests as visual tests (for manual inspection)",
+]
+filterwarnings = [
+    "ignore::UserWarning",
+    "ignore::RuntimeWarning", 
+    "ignore::DeprecationWarning",
+    "ignore::pytest.PytestUnknownMarkWarning",
+]

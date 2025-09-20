@@ -8,3 +8,8 @@ pypandoc
 myst-nb
 sphinx-rtd-theme
 sphinx
+
+# Testing dependencies
+pytest
+pytest-cov
+pytest-mock
