@@ -1,14 +1,7 @@
-netcdf4
-xarray
-numpy
-matplotlib
-pandas  
-seaborn 
-scipy 
-cmocean 
-tqdm
-gsw
-cartopy
+# Pull in the base stack so we don't duplicate pins here
+-r requirements.txt
+
+# Development-specific dependencies
 nbsphinx
 nbconvert
 pypandoc
