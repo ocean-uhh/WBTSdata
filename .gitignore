@@ -182,3 +182,7 @@ data/augmented_profiles.npz
 
 # Claude Code configuration
 CLAUDE.md
+.claude/
+
+# VS Code configuration
+.vscode/
