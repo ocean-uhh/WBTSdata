@@ -1,0 +1,141 @@
+%   AB1811_034 
+%   26°02.9812'N 
+%   79°39.9404'W 
+%  ----------------------------------------------------------------------------
+%  PROCESSED LOWERED ADCP CURRENT VELOCITY DATA 
+%   
+%  These LADCP data were collected by NOAA/AOML/PhOD and UM/RSMAS/MPO 
+%  during AB1811, as part of a WBTS Hydrographic Survey, 
+%  conducted in November 2018 aboard the R/V Atlantic Explorer. 
+%   
+%  Data contained in this file were originally acquired using 
+%  a downward-facing 150kHz RDI whADCP and an upward-facing 300kHz RDI whADCP. 
+%   
+%  These data should be considered final data. 
+%  For further information, contact: ryan.smith@noaa.gov 
+%  ----------------------------------------------------------------------------
+%   
+%  ship                                   =  AE 
+%  cruise_id                              =  AB1811 
+%  ladcp_configuration                    =  WH150_WH300 
+%   
+%  ladcp_cast_number                      =  AB1811_034 
+%   
+%  avg_position_latitude_deg_min          =  26°03.4289'N 
+%  avg_position_longitude_deg_min         =  79°39.8205'W 
+%  avg_position_latitude_decimal_deg      =  26.057149 
+%  avg_position_longitude_decimal_deg     = -79.663675 
+%  avg_time_gmt_mm/dd/yy                  =  12/02/18 
+%  avg_time_gmt_HH:MM:SS                  =  04:16:00 
+%  avg_time_gmt_decimal_Julian_day        =  336.17778478 
+%  avg_time_gmt_decimal_year_day          =  335.17778478 
+%  avg_time_gmt_matlab_datenum            =  737396.17778478 
+%   
+%  start_position_latitude_deg_min        =  26°02.9812'N 
+%  start_position_longitude_deg_min       =  79°39.9404'W 
+%  start_position_latitude_decimal_deg    =  26.049687 
+%  start_position_longitude_decimal_deg   = -79.665674 
+%  start_time_gmt_mm/dd/yy                =  12/02/18 
+%  start_time_gmt_HH:MM:SS                =  03:54:32 
+%  start_time_gmt_decimal_Julian_day      =  336.16287477 
+%  start_time_gmt_decimal_year_day        =  335.16287477 
+%  start_time_gmt_matlab_datenum          =  737396.16287477 
+%   
+%  end_position_latitude_deg_min          =  26°03.8766'N 
+%  end_position_longitude_deg_min         =  79°39.7005'W 
+%  end_position_latitude_decimal_deg      =  26.064610 
+%  end_position_longitude_decimal_deg     = -79.661676 
+%  end_time_gmt_mm/dd/yy                  =  12/02/18 
+%  end_time_gmt_HH:MM:SS                  =  04:37:28 
+%  end_time_gmt_decimal_Julian_day        =  336.19269479 
+%  end_time_gmt_decimal_year_day          =  335.19269479 
+%  end_time_gmt_matlab_datenum            =  737396.19269479 
+%   
+%  data_status                            =  final 
+%  processing_software                    =  GEOMAR_LADCP_v10.20 
+%  processed_with_NAV_data                =  yes 
+%  processed_with_CTD_data                =  yes 
+%  processed_with_SADCP_data              =  yes 
+%  processed_with_bottom_track_data       =  yes 
+%  tides_removed_from_data                =  no 
+%  velocity_data_filename                 =  AB1811_034d.vel 
+%  contact_info                           =  ryan.smith@noaa.gov 
+%  
+%  ----------------------------------------------------------------------------
+%   
+%  depth_units       =  meters 
+%  velocity_units    =  cm_per_sec 
+%   
+%  data_column_1     =  z_depth 
+%  data_column_2     =  u_water_velocity_component 
+%  data_column_3     =  v_water_velocity_component 
+%  data_column_4     =  error_velocity 
+%   
+%  ----------------------------------------------------------------------------
+0010.0  -005.763  0132.395  0007.088 
+0020.0  -005.761  0132.382  0006.797 
+0030.0  -008.736  0130.732  0007.432 
+0040.0  -006.393  0129.746  0005.947 
+0050.0  -005.705  0128.969  0005.803 
+0060.0  -005.383  0128.454  0006.089 
+0070.0  -004.689  0128.865  0006.148 
+0080.0  -001.855  0128.249  0005.683 
+0090.0  0001.878  0125.430  0005.282 
+0100.0  0001.851  0122.351  0005.751 
+0110.0  0002.695  0120.439  0005.642 
+0120.0  0006.789  0119.376  0005.598 
+0130.0  0007.056  0116.688  0005.174 
+0140.0  0004.856  0112.800  0005.020 
+0150.0  0005.510  0108.378  0005.279 
+0160.0  0005.685  0107.604  0005.160 
+0170.0  0004.046  0108.921  0005.471 
+0180.0  0005.310  0106.885  0005.227 
+0190.0  0008.414  0101.315  0004.633 
+0200.0  0007.108  0099.127  0004.644 
+0210.0  0004.957  0097.866  0004.759 
+0220.0  0001.962  0094.396  0004.330 
+0230.0  0002.294  0090.870  0004.449 
+0240.0  0003.329  0087.577  0004.473 
+0250.0  0005.216  0086.261  0004.181 
+0260.0  0006.629  0086.022  0004.208 
+0270.0  0005.716  0085.545  0004.383 
+0280.0  0006.130  0085.064  0004.141 
+0290.0  0006.217  0082.949  0004.250 
+0300.0  0006.041  0081.037  0003.860 
+0310.0  0005.064  0081.928  0004.025 
+0320.0  0003.585  0080.984  0003.854 
+0330.0  0004.987  0076.801  0004.048 
+0340.0  0005.888  0074.348  0003.828 
+0350.0  0005.776  0072.757  0003.901 
+0360.0  0005.548  0070.322  0003.927 
+0370.0  0005.504  0065.978  0003.926 
+0380.0  0004.575  0064.326  0003.848 
+0390.0  0004.185  0063.995  0003.872 
+0400.0  0004.350  0062.661  0003.732 
+0410.0  0004.758  0061.603  0003.586 
+0420.0  0003.273  0058.981  0003.646 
+0430.0  0003.660  0057.313  0003.436 
+0440.0  0003.829  0057.221  0003.754 
+0450.0  0004.179  0058.433  0003.503 
+0460.0  0003.632  0057.969  0003.715 
+0470.0  0005.425  0057.609  0003.458 
+0480.0  0006.018  0059.134  0003.597 
+0490.0  0006.730  0058.328  0003.576 
+0500.0  0005.849  0056.849  0003.839 
+0510.0  0006.320  0055.317  0003.717 
+0520.0  0005.887  0054.162  0003.736 
+0530.0  0006.885  0052.357  0003.788 
+0540.0  0008.093  0049.810  0003.752 
+0550.0  0008.779  0048.263  0003.737 
+0560.0  0008.734  0045.480  0004.027 
+0570.0  0009.157  0043.601  0004.065 
+0580.0  0008.722  0040.970  0004.055 
+0590.0  0008.956  0037.396  0004.525 
+0600.0  0006.858  0034.036  0004.536 
+0610.0  0007.152  0030.664  0004.920 
+0620.0  0004.814  0027.045  0005.081 
+0630.0  0005.657  0022.129  0004.943 
+0640.0  0006.106  0018.761  0005.716 
+0650.0  0007.388  0016.435  0005.543 
+0660.0  0007.270  0014.221  0005.300 
+0670.0  0008.609  0012.822  0008.264 

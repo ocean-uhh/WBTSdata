@@ -2,6 +2,11 @@
 data/CTD/*
 data/ADCP/*
 data/Merged/*
+
+# Allow sample data for demo
+!data/Merged/WBTS_2001_04_CTD_LADCP.nc
+!data/Merged/WBTS_2002_06_CTD_LADCP.nc
+!data/Merged/WBTS_2003_02_CTD_LADCP.nc
 all_data_2001_2023.nc
 *eleanor*
 

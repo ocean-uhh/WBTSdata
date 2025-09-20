@@ -191,7 +191,7 @@ def merge_datasets(cal_dir, vel_dir, config=None):
         ds_merge.attrs['platform'] = 'CTD and Lowered Acoustic Doppler Current Profilers (LADCP)'
     return ds_merge
     
-def merge_years(merge_dir):
+def merge_years(merge_dir, max_files=None):
     '''
     Merge the datasets of different years into one dataset
     
@@ -199,6 +199,8 @@ def merge_years(merge_dir):
     ----------
     merge_dir : str
         The path to the directory containing the merged datasets of different years
+    max_files : int, optional
+        Maximum number of files to process (for demo purposes). If None, process all files.
         
     Returns
     -------
@@ -206,14 +208,30 @@ def merge_years(merge_dir):
         The dataset containing the merged data of all years
     '''
     merged_files = glob.glob(os.path.join(merge_dir, 'Merged', '*.nc'))
+    
+    # Exclude the output file that may already exist 
+    merged_files = [f for f in merged_files if not f.endswith('WBTS_all_years_CTD_LADCP.nc')]
+    
+    # Sort files to ensure consistent ordering
+    merged_files.sort()
+    
+    # Limit files for demo if specified
+    if max_files is not None:
+        merged_files = merged_files[:max_files]
+        print(f"Processing {len(merged_files)} files for demonstration (limited from {len(glob.glob(os.path.join(merge_dir, 'Merged', '*.nc')))} total)")
 
     processed_datasets = []
     for file1 in merged_files:
+        print(f"Loading {os.path.basename(file1)}...")
         ds_new = xr.open_dataset(file1)
         if ds_new:
             processed_datasets.append(ds_new)
         else:
-            print(f"Warning: Dataset for dive number {ds.attrs['dive_number']} is empty or invalid.")
+            print(f"Warning: Dataset {os.path.basename(file1)} is empty or invalid.")
+    
+    if not processed_datasets:
+        raise ValueError("No valid datasets found to merge.")
+        
     concatenated_ds = xr.concat(processed_datasets, dim='DATETIME')
     ds_all = concatenated_ds.sortby('DATETIME')
     ds_all.attrs['geospatial_vertical_max'] = ds_all['DEPTH'].max().values

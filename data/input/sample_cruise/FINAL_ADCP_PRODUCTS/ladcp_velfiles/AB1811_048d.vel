@@ -1,0 +1,86 @@
+%   AB1811_048 
+%   27°00.1655'N 
+%   79°55.9616'W 
+%  ----------------------------------------------------------------------------
+%  PROCESSED LOWERED ADCP CURRENT VELOCITY DATA 
+%   
+%  These LADCP data were collected by NOAA/AOML/PhOD and UM/RSMAS/MPO 
+%  during AB1811, as part of a WBTS Hydrographic Survey, 
+%  conducted in November 2018 aboard the R/V Atlantic Explorer. 
+%   
+%  Data contained in this file were originally acquired using 
+%  a downward-facing 150kHz RDI whADCP and an upward-facing 300kHz RDI whADCP. 
+%   
+%  These data should be considered final data. 
+%  For further information, contact: ryan.smith@noaa.gov 
+%  ----------------------------------------------------------------------------
+%   
+%  ship                                   =  AE 
+%  cruise_id                              =  AB1811 
+%  ladcp_configuration                    =  WH150_WH300 
+%   
+%  ladcp_cast_number                      =  AB1811_048 
+%   
+%  avg_position_latitude_deg_min          =  27°00.3242'N 
+%  avg_position_longitude_deg_min         =  79°55.9791'W 
+%  avg_position_latitude_decimal_deg      =  27.005404 
+%  avg_position_longitude_decimal_deg     = -79.932985 
+%  avg_time_gmt_mm/dd/yy                  =  12/03/18 
+%  avg_time_gmt_HH:MM:SS                  =  07:13:42 
+%  avg_time_gmt_decimal_Julian_day        =  337.30119097 
+%  avg_time_gmt_decimal_year_day          =  336.30119097 
+%  avg_time_gmt_matlab_datenum            =  737397.30119097 
+%   
+%  start_position_latitude_deg_min        =  27°00.1655'N 
+%  start_position_longitude_deg_min       =  79°55.9616'W 
+%  start_position_latitude_decimal_deg    =  27.002759 
+%  start_position_longitude_decimal_deg   = -79.932693 
+%  start_time_gmt_mm/dd/yy                =  12/03/18 
+%  start_time_gmt_HH:MM:SS                =  07:09:04 
+%  start_time_gmt_decimal_Julian_day      =  337.29796377 
+%  start_time_gmt_decimal_year_day        =  336.29796377 
+%  start_time_gmt_matlab_datenum          =  737397.29796377 
+%   
+%  end_position_latitude_deg_min          =  27°00.4829'N 
+%  end_position_longitude_deg_min         =  79°55.9966'W 
+%  end_position_latitude_decimal_deg      =  27.008048 
+%  end_position_longitude_decimal_deg     = -79.933276 
+%  end_time_gmt_mm/dd/yy                  =  12/03/18 
+%  end_time_gmt_HH:MM:SS                  =  07:18:21 
+%  end_time_gmt_decimal_Julian_day        =  337.30441817 
+%  end_time_gmt_decimal_year_day          =  336.30441817 
+%  end_time_gmt_matlab_datenum            =  737397.30441817 
+%   
+%  data_status                            =  final 
+%  processing_software                    =  GEOMAR_LADCP_v10.20 
+%  processed_with_NAV_data                =  yes 
+%  processed_with_CTD_data                =  yes 
+%  processed_with_SADCP_data              =  yes 
+%  processed_with_bottom_track_data       =  yes 
+%  tides_removed_from_data                =  no 
+%  velocity_data_filename                 =  AB1811_048d.vel 
+%  contact_info                           =  ryan.smith@noaa.gov 
+%  
+%  ----------------------------------------------------------------------------
+%   
+%  depth_units       =  meters 
+%  velocity_units    =  cm_per_sec 
+%   
+%  data_column_1     =  z_depth 
+%  data_column_2     =  u_water_velocity_component 
+%  data_column_3     =  v_water_velocity_component 
+%  data_column_4     =  error_velocity 
+%   
+%  ----------------------------------------------------------------------------
+0010.0  0003.219  0139.878  0029.123 
+0020.0  -003.663  0167.226  0018.992 
+0030.0  -000.523  0164.168  0019.963 
+0040.0  -003.763  0164.711  0013.554 
+0050.0  -005.530  0163.551  0013.659 
+0060.0  -008.741  0160.510  0013.868 
+0070.0  -007.968  0142.368  0015.016 
+0080.0  -006.053  0119.034  0015.009 
+0090.0  -005.335  0088.931  0015.205 
+0100.0  -005.714  0055.414  0015.197 
+0110.0  -005.615  0015.590  0025.689 
+0120.0  -000.409  0016.740  0031.211 

@@ -1,0 +1,99 @@
+%   AB1811_037 
+%   26°03.2497'N 
+%   79°55.8662'W 
+%  ----------------------------------------------------------------------------
+%  PROCESSED LOWERED ADCP CURRENT VELOCITY DATA 
+%   
+%  These LADCP data were collected by NOAA/AOML/PhOD and UM/RSMAS/MPO 
+%  during AB1811, as part of a WBTS Hydrographic Survey, 
+%  conducted in November 2018 aboard the R/V Atlantic Explorer. 
+%   
+%  Data contained in this file were originally acquired using 
+%  a downward-facing 150kHz RDI whADCP and an upward-facing 300kHz RDI whADCP. 
+%   
+%  These data should be considered final data. 
+%  For further information, contact: ryan.smith@noaa.gov 
+%  ----------------------------------------------------------------------------
+%   
+%  ship                                   =  AE 
+%  cruise_id                              =  AB1811 
+%  ladcp_configuration                    =  WH150_WH300 
+%   
+%  ladcp_cast_number                      =  AB1811_037 
+%   
+%  avg_position_latitude_deg_min          =  26°03.5103'N 
+%  avg_position_longitude_deg_min         =  79°55.7212'W 
+%  avg_position_latitude_decimal_deg      =  26.058505 
+%  avg_position_longitude_decimal_deg     = -79.928687 
+%  avg_time_gmt_mm/dd/yy                  =  12/02/18 
+%  avg_time_gmt_HH:MM:SS                  =  09:01:20 
+%  avg_time_gmt_decimal_Julian_day        =  336.37593409 
+%  avg_time_gmt_decimal_year_day          =  335.37593409 
+%  avg_time_gmt_matlab_datenum            =  737396.37593409 
+%   
+%  start_position_latitude_deg_min        =  26°03.2497'N 
+%  start_position_longitude_deg_min       =  79°55.8662'W 
+%  start_position_latitude_decimal_deg    =  26.054162 
+%  start_position_longitude_decimal_deg   = -79.931104 
+%  start_time_gmt_mm/dd/yy                =  12/02/18 
+%  start_time_gmt_HH:MM:SS                =  08:52:46 
+%  start_time_gmt_decimal_Julian_day      =  336.36998310 
+%  start_time_gmt_decimal_year_day        =  335.36998310 
+%  start_time_gmt_matlab_datenum          =  737396.36998310 
+%   
+%  end_position_latitude_deg_min          =  26°03.7708'N 
+%  end_position_longitude_deg_min         =  79°55.5762'W 
+%  end_position_latitude_decimal_deg      =  26.062847 
+%  end_position_longitude_decimal_deg     = -79.926271 
+%  end_time_gmt_mm/dd/yy                  =  12/02/18 
+%  end_time_gmt_HH:MM:SS                  =  09:09:54 
+%  end_time_gmt_decimal_Julian_day        =  336.38188507 
+%  end_time_gmt_decimal_year_day          =  335.38188507 
+%  end_time_gmt_matlab_datenum            =  737396.38188507 
+%   
+%  data_status                            =  final 
+%  processing_software                    =  GEOMAR_LADCP_v10.20 
+%  processed_with_NAV_data                =  yes 
+%  processed_with_CTD_data                =  yes 
+%  processed_with_SADCP_data              =  yes 
+%  processed_with_bottom_track_data       =  yes 
+%  tides_removed_from_data                =  no 
+%  velocity_data_filename                 =  AB1811_037d.vel 
+%  contact_info                           =  ryan.smith@noaa.gov 
+%  
+%  ----------------------------------------------------------------------------
+%   
+%  depth_units       =  meters 
+%  velocity_units    =  cm_per_sec 
+%   
+%  data_column_1     =  z_depth 
+%  data_column_2     =  u_water_velocity_component 
+%  data_column_3     =  v_water_velocity_component 
+%  data_column_4     =  error_velocity 
+%   
+%  ----------------------------------------------------------------------------
+0010.0  0025.780  0152.350  0036.809 
+0020.0  0023.329  0150.036  0015.090 
+0030.0  0024.721  0147.934  0014.364 
+0040.0  0022.623  0148.015  0011.798 
+0050.0  0022.838  0143.686  0012.368 
+0060.0  0019.512  0130.090  0012.677 
+0070.0  0015.472  0122.997  0012.145 
+0080.0  0011.783  0119.901  0010.789 
+0090.0  0011.136  0120.856  0011.475 
+0100.0  0011.871  0119.104  0011.324 
+0110.0  0014.458  0123.141  0012.494 
+0120.0  0018.377  0125.386  0011.663 
+0130.0  0020.201  0122.448  0011.774 
+0140.0  0020.464  0116.797  0011.699 
+0150.0  0023.246  0107.531  0012.814 
+0160.0  0022.093  0096.572  0012.713 
+0170.0  0020.800  0085.680  0012.121 
+0180.0  0019.403  0077.731  0013.319 
+0190.0  0016.979  0072.305  0012.875 
+0200.0  0015.061  0066.938  0013.899 
+0210.0  0014.201  0059.326  0013.631 
+0220.0  0013.026  0045.211  0016.554 
+0230.0  0011.132  0040.424  0020.866 
+0240.0  0007.468  0035.494  0019.257 
+0250.0  0008.976  0034.581  0022.590 
