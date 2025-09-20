@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WBTSdata API &mdash; WBTSdata v0.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to WBTSdata’s documentation!" href="index.html" /> 
+    <link rel="prev" title="Import all necessary packages" href="demo-output.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,7 +43,14 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html">Import all necessary packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html#Demo-Configuration">Demo Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html#Load-the-merged-file">Load the merged file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html#Plot-the-stations-of-the-whole-time-series-for-different-longitudes">Plot the stations of the whole time series for different longitudes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">WBTSdata</span> <span class="pre">API</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#WBTSdata.load_vel_files.create_Dataset"><code class="docutils literal notranslate"><span class="pre">create_Dataset()</span></code></a></li>
@@ -67,6 +74,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#WBTSdata.plotters.plot_cast_over_time"><code class="docutils literal notranslate"><span class="pre">plot_cast_over_time()</span></code></a></li>
 </ul>
 </li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/ocean-uhh/WBTSdata">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.aoml.noaa.gov/western-boundary-time-series/">WBTS Data Portal</a></li>
 </ul>
 
         </div>
@@ -275,11 +287,14 @@ Returns a list of pandas DataFrames.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="WBTSdata.merge_datasets.merge_years">
-<span class="sig-prename descclassname"><span class="pre">WBTSdata.merge_datasets.</span></span><span class="sig-name descname"><span class="pre">merge_years</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">merge_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/merge_datasets.html#merge_years"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.merge_datasets.merge_years" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">WBTSdata.merge_datasets.</span></span><span class="sig-name descname"><span class="pre">merge_years</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">merge_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_files</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/WBTSdata/merge_datasets.html#merge_years"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#WBTSdata.merge_datasets.merge_years" title="Link to this definition"></a></dt>
 <dd><p>Merge the datasets of different years into one dataset</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>merge_dir</strong> (<em>str</em>) – The path to the directory containing the merged datasets of different years</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>merge_dir</strong> (<em>str</em>) – The path to the directory containing the merged datasets of different years</p></li>
+<li><p><strong>max_files</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of files to process (for demo purposes). If None, process all files.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>ds_all</strong> – The dataset containing the merged data of all years</p>
@@ -484,13 +499,13 @@ Attributes that already exist in the dataset are not changed, except for unit re
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to WBTSdata’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="demo-output.html" class="btn btn-neutral float-left" title="Import all necessary packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Till Moritz, Eleanor Frajka-Williams.</p>
+    <p>&#169; Copyright 2025, Till Moritz, Eleanor Frajka-Williams.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

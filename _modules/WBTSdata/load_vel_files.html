@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WBTSdata.load_vel_files &mdash; WBTSdata v0.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
@@ -41,9 +41,21 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demo-output.html">Import all necessary packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo-output.html#Demo-Configuration">Demo Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo-output.html#Load-the-merged-file">Load the merged file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo-output.html#Plot-the-stations-of-the-whole-time-series-for-different-longitudes">Plot the stations of the whole time series for different longitudes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../WBTSdata.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">WBTSdata</span> <span class="pre">API</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/ocean-uhh/WBTSdata">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.aoml.noaa.gov/western-boundary-time-series/">WBTS Data Portal</a></li>
 </ul>
 
         </div>
@@ -71,19 +83,19 @@
            <div itemprop="articleBody">
              
   <h1>Source code for WBTSdata.load_vel_files</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">from</span> <span class="nn">WBTSdata.convert</span> <span class="kn">import</span> <span class="n">process_dataset</span>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">WBTSdata.convert</span><span class="w"> </span><span class="kn">import</span> <span class="n">process_dataset</span>
 
 <span class="n">column_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;z_depth&#39;</span><span class="p">,</span> <span class="s1">&#39;u_water_velocity_component&#39;</span><span class="p">,</span> <span class="s1">&#39;v_water_velocity_component&#39;</span><span class="p">,</span> <span class="s1">&#39;error_velocity&#39;</span><span class="p">]</span>
 <span class="n">units</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;meters&#39;</span><span class="p">,</span> <span class="s1">&#39;cm_per_s&#39;</span><span class="p">,</span> <span class="s1">&#39;cm_per_s&#39;</span><span class="p">,</span> <span class="s1">&#39;cm_per_s&#39;</span><span class="p">]</span>
 
 <div class="viewcode-block" id="load_vel_from_file">
 <a class="viewcode-back" href="../../WBTSdata.html#WBTSdata.load_vel_files.load_vel_from_file">[docs]</a>
-<span class="k">def</span> <span class="nf">load_vel_from_file</span><span class="p">(</span><span class="n">vel_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_vel_from_file</span><span class="p">(</span><span class="n">vel_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Load the velocity data from the files in the directory vel_dir.</span>
 <span class="sd">    Returns a list of pandas DataFrames.</span>
@@ -109,7 +121,7 @@
 
 <div class="viewcode-block" id="create_coordinates">
 <a class="viewcode-back" href="../../WBTSdata.html#WBTSdata.load_vel_files.create_coordinates">[docs]</a>
-<span class="k">def</span> <span class="nf">create_coordinates</span><span class="p">(</span><span class="n">vel_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_coordinates</span><span class="p">(</span><span class="n">vel_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Create a list of coordinates from the velocity data files in the directory vel_dir.</span>
 <span class="sd">    Returns three lists of coordinates: avg_coordinates, start_coordinates, end_coordinates.</span>
@@ -164,7 +176,7 @@
 
 <div class="viewcode-block" id="create_Dataset">
 <a class="viewcode-back" href="../../WBTSdata.html#WBTSdata.load_vel_files.create_Dataset">[docs]</a>
-<span class="k">def</span> <span class="nf">create_Dataset</span><span class="p">(</span><span class="n">vel_dir</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_Dataset</span><span class="p">(</span><span class="n">vel_dir</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Create a xr.Dataset from the velocity data files in the directory vel_dir.</span>
 
@@ -221,7 +233,7 @@
 
 <div class="viewcode-block" id="create_complete_Dataset">
 <a class="viewcode-back" href="../../WBTSdata.html#WBTSdata.load_vel_files.create_complete_Dataset">[docs]</a>
-<span class="k">def</span> <span class="nf">create_complete_Dataset</span><span class="p">(</span><span class="n">directory_list</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_complete_Dataset</span><span class="p">(</span><span class="n">directory_list</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Create a xr.Dataset from the velocity data files in the list of directories directory_list.</span>
 
@@ -249,7 +261,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Till Moritz, Eleanor Frajka-Williams.</p>
+    <p>&#169; Copyright 2025, Till Moritz, Eleanor Frajka-Williams.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

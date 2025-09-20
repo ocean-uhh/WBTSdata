@@ -6,8 +6,8 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to WBTSdata’s documentation! &mdash; WBTSdata v0.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+  <title>WBTSdata: Western Boundary Time Series Data Processing &mdash; WBTSdata v0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
@@ -17,10 +17,12 @@
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="WBTSdata API" href="WBTSdata.html" /> 
+    <link rel="next" title="Import all necessary packages" href="demo-output.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,9 +45,21 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html">Import all necessary packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html#Demo-Configuration">Demo Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html#Load-the-merged-file">Load the merged file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html#Plot-the-stations-of-the-whole-time-series-for-different-longitudes">Plot the stations of the whole time series for different longitudes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="WBTSdata.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">WBTSdata</span> <span class="pre">API</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/ocean-uhh/WBTSdata">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.aoml.noaa.gov/western-boundary-time-series/">WBTS Data Portal</a></li>
 </ul>
 
         </div>
@@ -62,7 +76,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Welcome to WBTSdata’s documentation!</li>
+      <li class="breadcrumb-item active">WBTSdata: Western Boundary Time Series Data Processing</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -72,18 +86,45 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="welcome-to-wbtsdata-s-documentation">
-<h1>Welcome to WBTSdata’s documentation!<a class="headerlink" href="#welcome-to-wbtsdata-s-documentation" title="Link to this heading"></a></h1>
-<p>WBTSdata is a Python package aiming to create netCDF files for each individual year of the Western Boundary Times Series (WBTS) project.</p>
-<p>The WBTS is a comprehensive observational program designed to monitor the Atlantic Meridional Overturning Circulation (AMOC) and its associated boundary currents, such as the Florida and Antilles Currents. These observations are critical for understanding the role of ocean circulation in regulating global climate and assessing changes over time.
-The program is primarily conducted by the National Oceanic and Atmospheric Administration (NOAA). Data are collected along hydrographic sections using ship-based methods, which include:</p>
-<p>Lowered Acoustic Doppler Current Profiler (LADCP): This instrument measures water velocity throughout the water column, providing detailed insights into the flow patterns of boundary currents.
-Conductivity-Temperature-Depth (CTD): These sensors measure the physical properties of seawater, such as temperature, salinity, and density, which are essential for characterizing oceanographic conditions.
-The calibrated WBTS data, including LADCP and CTD measurements, are made publicly available through NOAA’s Atlantic Oceanographic and Meteorological Laboratory (AOML) (see: <a class="reference external" href="https://www.aoml.noaa.gov/western-boundary-time-series/">https://www.aoml.noaa.gov/western-boundary-time-series/</a>).</p>
-<p>We provide an example notebook to demonstrate how the data is loaded and merged into xarray.Datasets. The data is then saved as netCDF files for each individual year.</p>
-<hr class="docutils" />
+  <section id="wbtsdata-western-boundary-time-series-data-processing">
+<h1>WBTSdata: Western Boundary Time Series Data Processing<a class="headerlink" href="#wbtsdata-western-boundary-time-series-data-processing" title="Link to this heading"></a></h1>
+<p>WBTSdata is a Python package for loading, processing, and visualizing data from the Western Boundary Time Series (WBTS) project. The package provides tools for handling oceanographic CTD and ADCP data with functions for data loading, conversion, plotting, and analysis.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The WBTS is a comprehensive observational program designed to monitor the Atlantic Meridional Overturning Circulation (AMOC) and its associated boundary currents, such as the Florida and Antilles Currents. These observations are critical for understanding the role of ocean circulation in regulating global climate and assessing changes over time.</p>
+<p>The program is primarily conducted by the National Oceanic and Atmospheric Administration (NOAA). Data are collected along hydrographic sections using ship-based methods, which include:</p>
+<ul class="simple">
+<li><p><strong>Lowered Acoustic Doppler Current Profiler (LADCP)</strong>: Measures water velocity throughout the water column, providing detailed insights into the flow patterns of boundary currents.</p></li>
+<li><p><strong>Conductivity-Temperature-Depth (CTD)</strong>: Measures the physical properties of seawater, such as temperature, salinity, and density, which are essential for characterizing oceanographic conditions.</p></li>
+</ul>
+<p>The calibrated WBTS data, including LADCP and CTD measurements, are made publicly available through NOAA’s Atlantic Oceanographic and Meteorological Laboratory (AOML) at <a class="reference external" href="https://www.aoml.noaa.gov/western-boundary-time-series/">https://www.aoml.noaa.gov/western-boundary-time-series/</a>.</p>
+</section>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Load and process CTD oceanographic data from NetCDF files</p></li>
+<li><p>Data conversion utilities for WBTS datasets</p></li>
+<li><p>Visualization functions for time series and profile data</p></li>
+<li><p>Data merging and quality control tools</p></li>
+<li><p>Support for ADCP velocity data</p></li>
+<li><p>Integration with the scientific Python ecosystem (xarray, pandas, matplotlib)</p></li>
+</ul>
+</section>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html">Import all necessary packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html#Demo-Configuration">Demo Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html#Load-the-merged-file">Load the merged file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html#Plot-the-stations-of-the-whole-time-series-for-different-longitudes">Plot the stations of the whole time series for different longitudes</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="WBTSdata.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">WBTSdata</span> <span class="pre">API</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="WBTSdata.html#WBTSdata.load_vel_files.create_Dataset"><code class="docutils literal notranslate"><span class="pre">create_Dataset()</span></code></a></li>
@@ -109,27 +150,35 @@ The calibrated WBTS data, including LADCP and CTD measurements, are made publicl
 </li>
 </ul>
 </div>
-</section>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Project Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/ocean-uhh/WBTSdata">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.aoml.noaa.gov/western-boundary-time-series/">WBTS Data Portal</a></li>
+</ul>
+</div>
 <section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
+<h3>Indices and Tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
 </section>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="WBTSdata.html" class="btn btn-neutral float-right" title="WBTSdata API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="demo-output.html" class="btn btn-neutral float-right" title="Import all necessary packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Till Moritz, Eleanor Frajka-Williams.</p>
+    <p>&#169; Copyright 2025, Till Moritz, Eleanor Frajka-Williams.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

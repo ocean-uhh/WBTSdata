@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WBTSdata.merge_datasets &mdash; WBTSdata v0.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
@@ -41,9 +41,21 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demo-output.html">Import all necessary packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo-output.html#Demo-Configuration">Demo Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo-output.html#Load-the-merged-file">Load the merged file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo-output.html#Plot-the-stations-of-the-whole-time-series-for-different-longitudes">Plot the stations of the whole time series for different longitudes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../WBTSdata.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">WBTSdata</span> <span class="pre">API</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/ocean-uhh/WBTSdata">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.aoml.noaa.gov/western-boundary-time-series/">WBTS Data Portal</a></li>
 </ul>
 
         </div>
@@ -71,18 +83,18 @@
            <div itemprop="articleBody">
              
   <h1>Source code for WBTSdata.merge_datasets</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">from</span> <span class="nn">WBTSdata</span> <span class="kn">import</span> <span class="n">load_vel_files</span><span class="p">,</span> <span class="n">load_cal_files</span><span class="p">,</span> <span class="n">tools</span><span class="p">,</span> <span class="n">convert</span>
-<span class="kn">import</span> <span class="nn">glob</span>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">WBTSdata</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_vel_files</span><span class="p">,</span> <span class="n">load_cal_files</span><span class="p">,</span> <span class="n">tools</span><span class="p">,</span> <span class="n">convert</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
 
 
 <div class="viewcode-block" id="dir_list_CTD">
 <a class="viewcode-back" href="../../WBTSdata.html#WBTSdata.merge_datasets.dir_list_CTD">[docs]</a>
-<span class="k">def</span> <span class="nf">dir_list_CTD</span><span class="p">(</span><span class="n">input_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dir_list_CTD</span><span class="p">(</span><span class="n">input_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    create a list with all the directories that contain the CTD data</span>
 <span class="sd">    </span>
@@ -109,7 +121,7 @@
 
 <div class="viewcode-block" id="dir_list_ADCP">
 <a class="viewcode-back" href="../../WBTSdata.html#WBTSdata.merge_datasets.dir_list_ADCP">[docs]</a>
-<span class="k">def</span> <span class="nf">dir_list_ADCP</span><span class="p">(</span><span class="n">input_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dir_list_ADCP</span><span class="p">(</span><span class="n">input_dir</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    create a list with all the directories that contain the ADCP data</span>
 <span class="sd">    </span>
@@ -140,7 +152,7 @@
 
 <div class="viewcode-block" id="create_coordinates_with_ADCPtimes">
 <a class="viewcode-back" href="../../WBTSdata.html#WBTSdata.merge_datasets.create_coordinates_with_ADCPtimes">[docs]</a>
-<span class="k">def</span> <span class="nf">create_coordinates_with_ADCPtimes</span><span class="p">(</span><span class="n">cal_dir</span><span class="p">,</span> <span class="n">input_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_coordinates_with_ADCPtimes</span><span class="p">(</span><span class="n">cal_dir</span><span class="p">,</span> <span class="n">input_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Create a list of coordinates for the CTD data with the corresponding ADCP times</span>
 <span class="sd">    </span>
@@ -183,7 +195,7 @@
 
 <div class="viewcode-block" id="create_CTD_Dataset_with_ADCPtimes">
 <a class="viewcode-back" href="../../WBTSdata.html#WBTSdata.merge_datasets.create_CTD_Dataset_with_ADCPtimes">[docs]</a>
-<span class="k">def</span> <span class="nf">create_CTD_Dataset_with_ADCPtimes</span><span class="p">(</span><span class="n">cal_dir</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_CTD_Dataset_with_ADCPtimes</span><span class="p">(</span><span class="n">cal_dir</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Create a CTD dataset with the corresponding ADCP times.</span>
 
@@ -238,7 +250,7 @@
 
 <div class="viewcode-block" id="merge_datasets">
 <a class="viewcode-back" href="../../WBTSdata.html#WBTSdata.merge_datasets.merge_datasets">[docs]</a>
-<span class="k">def</span> <span class="nf">merge_datasets</span><span class="p">(</span><span class="n">cal_dir</span><span class="p">,</span> <span class="n">vel_dir</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">merge_datasets</span><span class="p">(</span><span class="n">cal_dir</span><span class="p">,</span> <span class="n">vel_dir</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Merge the CTD and ADCP datasets.</span>
 <span class="sd">    </span>
@@ -281,7 +293,7 @@
     
 <div class="viewcode-block" id="merge_years">
 <a class="viewcode-back" href="../../WBTSdata.html#WBTSdata.merge_datasets.merge_years">[docs]</a>
-<span class="k">def</span> <span class="nf">merge_years</span><span class="p">(</span><span class="n">merge_dir</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">merge_years</span><span class="p">(</span><span class="n">merge_dir</span><span class="p">,</span> <span class="n">max_files</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Merge the datasets of different years into one dataset</span>
 <span class="sd">    </span>
@@ -289,6 +301,8 @@
 <span class="sd">    ----------</span>
 <span class="sd">    merge_dir : str</span>
 <span class="sd">        The path to the directory containing the merged datasets of different years</span>
+<span class="sd">    max_files : int, optional</span>
+<span class="sd">        Maximum number of files to process (for demo purposes). If None, process all files.</span>
 <span class="sd">        </span>
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -296,14 +310,30 @@
 <span class="sd">        The dataset containing the merged data of all years</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">merged_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">merge_dir</span><span class="p">,</span> <span class="s1">&#39;Merged&#39;</span><span class="p">,</span> <span class="s1">&#39;*.nc&#39;</span><span class="p">))</span>
+    
+    <span class="c1"># Exclude the output file that may already exist </span>
+    <span class="n">merged_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">merged_files</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;WBTS_all_years_CTD_LADCP.nc&#39;</span><span class="p">)]</span>
+    
+    <span class="c1"># Sort files to ensure consistent ordering</span>
+    <span class="n">merged_files</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    
+    <span class="c1"># Limit files for demo if specified</span>
+    <span class="k">if</span> <span class="n">max_files</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">merged_files</span> <span class="o">=</span> <span class="n">merged_files</span><span class="p">[:</span><span class="n">max_files</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">merged_files</span><span class="p">)</span><span class="si">}</span><span class="s2"> files for demonstration (limited from </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">merge_dir</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Merged&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;*.nc&#39;</span><span class="p">)))</span><span class="si">}</span><span class="s2"> total)&quot;</span><span class="p">)</span>
 
     <span class="n">processed_datasets</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">file1</span> <span class="ow">in</span> <span class="n">merged_files</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file1</span><span class="p">)</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
         <span class="n">ds_new</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">file1</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ds_new</span><span class="p">:</span>
             <span class="n">processed_datasets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds_new</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: Dataset for dive number </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;dive_number&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> is empty or invalid.&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: Dataset </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file1</span><span class="p">)</span><span class="si">}</span><span class="s2"> is empty or invalid.&quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">processed_datasets</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No valid datasets found to merge.&quot;</span><span class="p">)</span>
+        
     <span class="n">concatenated_ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">processed_datasets</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="s1">&#39;DATETIME&#39;</span><span class="p">)</span>
     <span class="n">ds_all</span> <span class="o">=</span> <span class="n">concatenated_ds</span><span class="o">.</span><span class="n">sortby</span><span class="p">(</span><span class="s1">&#39;DATETIME&#39;</span><span class="p">)</span>
     <span class="n">ds_all</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;geospatial_vertical_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds_all</span><span class="p">[</span><span class="s1">&#39;DEPTH&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
@@ -329,7 +359,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Till Moritz, Eleanor Frajka-Williams.</p>
+    <p>&#169; Copyright 2025, Till Moritz, Eleanor Frajka-Williams.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

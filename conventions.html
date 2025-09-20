@@ -1,0 +1,194 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coding Conventions &mdash; WBTSdata v0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2fea6348"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            WBTSdata
+              <img src="_static/dwbc-hydrography.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html">Import all necessary packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html#Demo-Configuration">Demo Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html#Load-the-merged-file">Load the merged file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo-output.html#Plot-the-stations-of-the-whole-time-series-for-different-longitudes">Plot the stations of the whole time series for different longitudes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="WBTSdata.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">WBTSdata</span> <span class="pre">API</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/ocean-uhh/WBTSdata">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.aoml.noaa.gov/western-boundary-time-series/">WBTS Data Portal</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">WBTSdata</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Coding Conventions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/conventions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="coding-conventions">
+<h1>Coding Conventions<a class="headerlink" href="#coding-conventions" title="Link to this heading"></a></h1>
+<p>This document outlines the coding conventions and best practices for the WBTSdata project.</p>
+<section id="code-style">
+<h2>Code Style<a class="headerlink" href="#code-style" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Python Code</strong>: Follow PEP 8 style guidelines</p></li>
+<li><p><strong>Line Length</strong>: Maximum 88 characters (Black formatter default)</p></li>
+<li><p><strong>Import Organization</strong>: Use isort for consistent import ordering</p></li>
+<li><p><strong>Code Formatting</strong>: Use Black for automatic code formatting</p></li>
+</ul>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Docstrings</strong>: Use NumPy-style docstrings for all functions and classes</p></li>
+<li><p><strong>Type Hints</strong>: Include type hints for function parameters and return values where appropriate</p></li>
+<li><p><strong>Comments</strong>: Write clear, concise comments for complex logic</p></li>
+</ul>
+<p>Example docstring format:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">load_ctd_data</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">quality_control</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Load CTD data from a NetCDF file.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    file_path : str</span>
+<span class="sd">        Path to the NetCDF file containing CTD data.</span>
+<span class="sd">    quality_control : bool, optional</span>
+<span class="sd">        Whether to apply automatic quality control, by default True.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    xarray.Dataset</span>
+<span class="sd">        CTD data with coordinates and attributes.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; ds = load_ctd_data(&#39;data/ctd_2023.nc&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(ds.temperature.shape)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="code-quality">
+<h2>Code Quality<a class="headerlink" href="#code-quality" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Pre-commit Hooks</strong>: Use pre-commit for automatic code quality checks</p></li>
+<li><p><strong>Testing</strong>: Write tests for new functionality using pytest</p></li>
+<li><p><strong>Error Handling</strong>: Include appropriate error handling and informative error messages</p></li>
+<li><p><strong>Naming</strong>: Use descriptive variable and function names</p></li>
+</ul>
+</section>
+<section id="git-workflow">
+<h2>Git Workflow<a class="headerlink" href="#git-workflow" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Commit Messages</strong>: Write clear, descriptive commit messages</p></li>
+<li><p><strong>Branch Names</strong>: Use descriptive branch names (e.g., <cite>fix/ctd-loading-bug</cite>, <cite>feat/add-velocity-plots</cite>)</p></li>
+<li><p><strong>Pull Requests</strong>: Use the provided PR template and include tests for new features</p></li>
+</ul>
+</section>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Core Dependencies</strong>: Keep core dependencies minimal and well-justified</p></li>
+<li><p><strong>Version Pinning</strong>: Pin development dependencies in requirements-dev.txt</p></li>
+<li><p><strong>Documentation</strong>: Update requirements files when adding new dependencies</p></li>
+</ul>
+</section>
+<section id="data-handling">
+<h2>Data Handling<a class="headerlink" href="#data-handling" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>File Paths</strong>: Use pathlib.Path for cross-platform compatibility</p></li>
+<li><p><strong>NetCDF Files</strong>: Follow CF conventions for metadata and variable naming</p></li>
+<li><p><strong>Memory Management</strong>: Be mindful of memory usage when processing large datasets</p></li>
+<li><p><strong>Data Validation</strong>: Include checks for expected data formats and ranges</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Till Moritz, Eleanor Frajka-Williams.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

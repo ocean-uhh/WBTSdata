@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WBTSdata.tools &mdash; WBTSdata v0.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
@@ -41,9 +41,21 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../demo-output.html">Import all necessary packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo-output.html#Demo-Configuration">Demo Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo-output.html#Load-the-merged-file">Load the merged file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demo-output.html#Plot-the-stations-of-the-whole-time-series-for-different-longitudes">Plot the stations of the whole time series for different longitudes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../WBTSdata.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">WBTSdata</span> <span class="pre">API</span></code></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project Links</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/ocean-uhh/WBTSdata">GitHub Repository</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.aoml.noaa.gov/western-boundary-time-series/">WBTS Data Portal</a></li>
 </ul>
 
         </div>
@@ -71,15 +83,15 @@
            <div itemprop="articleBody">
              
   <h1>Source code for WBTSdata.tools</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">vocabularies</span>
-<span class="kn">import</span> <span class="nn">yaml</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">vocabularies</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <div class="viewcode-block" id="get_config">
 <a class="viewcode-back" href="../../WBTSdata.html#WBTSdata.tools.get_config">[docs]</a>
-<span class="k">def</span> <span class="nf">get_config</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_config</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Get the configuration settings from a YAML file.</span>
 
@@ -102,7 +114,7 @@
 
 <div class="viewcode-block" id="convert_units">
 <a class="viewcode-back" href="../../WBTSdata.html#WBTSdata.tools.convert_units">[docs]</a>
-<span class="k">def</span> <span class="nf">convert_units</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">preferred_units</span><span class="o">=</span><span class="n">vocabularies</span><span class="o">.</span><span class="n">preferred_units</span><span class="p">,</span> <span class="n">unit_conversion</span><span class="o">=</span><span class="n">vocabularies</span><span class="o">.</span><span class="n">unit_conversion</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_units</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">preferred_units</span><span class="o">=</span><span class="n">vocabularies</span><span class="o">.</span><span class="n">preferred_units</span><span class="p">,</span> <span class="n">unit_conversion</span><span class="o">=</span><span class="n">vocabularies</span><span class="o">.</span><span class="n">unit_conversion</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert the units of variables in an xarray Dataset to preferred units.  This is useful, for instance, to convert cm/s to m/s.</span>
 
@@ -141,7 +153,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Till Moritz, Eleanor Frajka-Williams.</p>
+    <p>&#169; Copyright 2025, Till Moritz, Eleanor Frajka-Williams.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
