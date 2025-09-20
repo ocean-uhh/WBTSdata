@@ -123,6 +123,7 @@
     <span class="c1"># Append °W to all the longitudes in the ytick label</span>
     <span class="n">yticks</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_yticks</span><span class="p">()</span>
     <span class="n">ytick_labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ytick</span><span class="si">}</span><span class="s1">°W&#39;</span> <span class="k">for</span> <span class="n">ytick</span> <span class="ow">in</span> <span class="n">yticks</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">yticks</span><span class="p">)</span>  <span class="c1"># Set the tick positions first</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">ytick_labels</span><span class="p">)</span>
 
     <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
