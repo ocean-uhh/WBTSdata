@@ -28,9 +28,9 @@ dynamic = [
   "dependencies",
   "version",
 ]
-urls.documentation = "https://github.com/ifmeo-hamburg/WBTSdata"
-urls.homepage = "https://github.com/ifmeo-hamburg/WBTSdata"
-urls.repository = "https://github.com/ifmeo-hamburg/WBTSdata"
+urls.documentation = "https://github.com/ocean-uhh/WBTSdata"
+urls.homepage = "https://github.com/ocean-uhh/WBTSdata"
+urls.repository = "https://github.com/ocean-uhh/WBTSdata"
 
 [tool.setuptools]
 packages = [

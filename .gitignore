@@ -173,3 +173,7 @@ cython_debug/
 #.idea/
 .idea
 de421.bsp
+data/augmented_profiles.npz
+
+# Claude Code configuration
+CLAUDE.md

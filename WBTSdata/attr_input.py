@@ -11,7 +11,7 @@ attr_general = {
     'project': 'Western Boundary Time Series',
     'data_url': '',
     'web_link':'https://www.aoml.noaa.gov/phod/wbts/data.php',
-    'comment':'GIT repository: https://github.com/ifmeo-hamburg/WBTSdata',
+    'comment':'GIT repository: https://github.com/ocean-uhh/WBTSdata',
     'featureType':'profile',
     'Conventions':'CF-1.11',
     'sections_vocabulary':'Abaco: ',
